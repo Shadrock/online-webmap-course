@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Studio Week 2</title>
+    <!-- Add Mapbox GL JS JavaScript file -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    body {
+         margin: 0;
+         padding: 0;
+         }
+     #mapId {
+         position: absolute;
+         top: 200px;
+         bottom: 100px;
+         width: 100%;
+          }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+  <h1>Studio Week 2 <br> Vector tiles with Mapbox GL JS </h1>
+  <!-- Add multiple pages to web page-->
+  <!-- active class displays the grey box around current page-->
+  <ul>
+  	<li><a href="index.html" target="_self">Output 1</a></li>
+    <li><a class="active" href="Mapbox-gl-js-cwm.html" target="_self">Output 2</a></li>
+    <li><a href="Mapbox-gl-js-ct.html" target="_self">Output 3</a></li>
+    <li><a href="Mapbox-gl-js-bm.html" target="_self">Output 4</a></li>
+  </ul>
+  <br>
+
+    <!-- Container for the map -->
+    <div id="mapId"></div>
+    <script>
+
+        // Mapbox GL JS requires a token
+        mapboxgl.accessToken = 'pk.eyJ1IjoicWlkaXpoYW5nIiwiYSI6ImNrOGdjNTRtbjAwMnczZXVkMm8wdWlxYmUifQ.8P_LRF-uggH6CNT_73GqNg';
+
+        // Initialize the map
+        var map = new mapboxgl.Map({
+            container: 'mapId', // container id
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-122.420790, 37.754700], // starting position [lng, lat]
+            zoom: 14 // starting zoom
+        });
+
+    </script>
+
+</body>
+
+</html>

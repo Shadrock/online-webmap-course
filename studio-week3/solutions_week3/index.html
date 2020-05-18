@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Studio Week 3</title>
+  <!-- Add Mapbox GL JS JavaScript file -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <!-- Add in the Mapbox GL JS CSS file -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <!-- Add CSS styling info for the map -->
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    h2,
+    h3 {
+      margin: 10px;
+      font-size: 1.2em;
+    }
+
+    h3 {
+      font-size: 1em;
+    }
+
+    p {
+      font-size: 0.85em;
+      margin: 10px;
+      text-align: left;
+    }
+
+    /**
+    * Create a position for the map
+    * on the page */
+    #map {
+      position: absolute;
+      top: 200px;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /**
+    * Set rules for how the map overlays
+    * (information box and legend) will be displayed
+    * on the page. */
+    .map-overlay {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.8);
+      margin-right: 20px;
+      font-family: Arial, sans-serif;
+      overflow: auto;
+      border-radius: 3px;
+    }
+
+    #features {
+      top: 200px;
+      height: 100px;
+      margin-top: 20px;
+      width: 250px;
+    }
+
+    #legend {
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      line-height: 18px;
+      height: 150px;
+      margin-bottom: 40px;
+      width: 100px;
+    }
+
+    .legend-key {
+      display: inline-block;
+      border-radius: 20%;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+  </style>
+  <!-- Adding styling info for page layout by reading in a CSS file -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <h1>Studio Week 3 <br> Choropleth Map with Mapbox </h1>
+  <!-- Add multiple pages to web page-->
+  <!-- active class displays the grey box around current page-->
+  <ul>
+  	<li><a class="active" href="index.html" target="_self">Output 1</a></li>
+    <li><a href="mapbox-interaction.html" target="_self">Output 2</a></li>
+    <li><a href="mapbox-turfjs.html" target="_self">Output 3</a></li>
+  </ul>
+  <br>
+
+  <!-- Add a div to give the map somewhere to go -->
+  <div id='map'></div>
+  <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+  <div class='map-overlay' id='legend'></div>
+
+  <script>
+    // Add your access token
+    mapboxgl.accessToken =  'pk.eyJ1IjoiZXhhbXBsZXMiLCJhIjoiY2p0MG01MXRqMW45cjQzb2R6b2ptc3J4MSJ9.zA2W0IkI0c6KaAhJfk9bWg';
+
+    // Create a variable called "map" to house your map
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/examples/cjgioozof002u2sr5k7t14dim' // map style URL from Mapbox Studio
+    });
+
+    map.on('load', function() {
+      var layers = ['0-10', '10-20', '20-50', '50-100', '100-200', '200-500', '500-1000', '1000+'];
+      var colors = ['#FFEDA0', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C', '#BD0026', '#800026'];
+
+      for (i = 0; i < layers.length; i++) {
+        var layer = layers[i];
+        var color = colors[i];
+        var item = document.createElement('div');
+        var key = document.createElement('span');
+        key.className = 'legend-key';
+        key.style.backgroundColor = color;
+
+        var value = document.createElement('span');
+        value.innerHTML = layer;
+        item.appendChild(key);
+        item.appendChild(value);
+        legend.appendChild(item);
+      }
+
+      map.on('mousemove', function(e) {
+        var states = map.queryRenderedFeatures(e.point, {
+          layers: ['statedata']
+        });
+
+        if (states.length > 0) {
+          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> people per square mile</em></p>';
+        } else {
+          document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
+        }
+      });
+
+      map.getCanvas().style.cursor = 'default';
+      map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
+
+    });
+
+  </script>
+</body>
+
+</html>

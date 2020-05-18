@@ -1,0 +1,34 @@
+ul {
+ list-style-type: none;
+ margin: 1px;
+ padding: 1px;
+ overflow: hidden;
+ background-color: white;
+}
+
+li {
+ float: left;
+ border-right: 2px solid white;
+}
+
+/* Add a border to all( but not the last) list items */
+li:last-child {
+ border-right: none;
+}
+
+li a {
+ display: block;
+ color: black;
+ text-align: left;
+ padding: 15px 17px;
+ text-decoration: none;
+}
+
+/* Links will change color when hovered over */
+li a:hover {
+ background-color: #a09f9f;
+}
+
+.active {
+ background-color: #a09f9f;
+}

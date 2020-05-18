@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Studio Week 3</title>
+  <!-- Add Mapbox GL JS JavaScript file -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <!-- Add in the Mapbox GL JS CSS file -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+  <!-- Add CSS styling info for the map -->
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 200px;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+  <!-- Adding styling info for page layout by reading in a CSS file -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<h1>Studio Week 3 <br> Analyze data with Turf.js and Mapbox GL JS </h1>
+<!-- Add multiple pages to web page-->
+<!-- active class displays the grey box around current page-->
+<ul>
+  <li><a href="index.html" target="_self">Output 1</a></li>
+  <li><a href="mapbox-interaction.html" target="_self">Output 2</a></li>
+  <li><a class="active" href="mapbox-turfjs.html" target="_self">Output 3</a></li>
+</ul>
+<br>
+
+<!-- Add a div to give the map somewhere to go -->
+<div id='map'></div>
+
+<script>
+
+</script>
+</body>
+
+</html>

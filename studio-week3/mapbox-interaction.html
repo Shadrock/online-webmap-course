@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Studio Week 3</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <!-- Adding in the Mapbox CSS file -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+  <!-- Adding Mapbox JavaScript file -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+  <!-- Adding styling info for the map -->
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 200px;
+      bottom: 0;
+      width: 100%;
+    }  </style>
+  <!-- Adding styling info for page layout by reading in a CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Studio Week 3<br> Interactions with Mapbox GL JS </h1>
+  <!-- Add multiple pages to web page-->
+  <!-- active class displays the grey box around current page-->
+  <ul>
+  	<li><a href="index.html" target="_self">Output 1</a></li>
+    <li><a class="active" href="mapbox-interaction.html" target="_self">Output 2</a></li>
+    <li><a href="mapbox-turfjs.html" target="_self">Output 3</a></li>
+  </ul>
+  <br>
+
+  <div id="map"></div>
+  <script>
+
+    // Initialize the map
+    mapboxgl.accessToken = '<your access token here>';
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+      center: [-122.44, 37.76], // starting position [lng, lat]
+      zoom: 11 // starting zoom
+    });
+
+    // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/
+
+    // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
+
+    // Add a function that flies to a location: https://docs.mapbox.com/mapbox-gl-js/api/#map#flyto
+
+    // Add a function that sets pitch (tilt) to 60 and bearing (rotation) to 45: https://docs.mapbox.com/mapbox-gl-js/api/#map#setpitch and https://docs.mapbox.com/mapbox-gl-js/api/#map#setbearing
+
+    // Add a search box: https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-geocoder/
+
+    // Add a geolocation button: https://docs.mapbox.com/mapbox-gl-js/api/#geolocatecontrol
+
+    </script>
+
+</body>
+
+</html>

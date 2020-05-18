@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Studio Week 2</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <!-- Add a `link` tag for Mapbox GL JS's CSS -->
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <!-- Add a `script` tag for Mapbox GL JS's JavaScript -->
+
+  <!-- Set the map's width: 800px and height: 600px in a `style` tag -->
+  <style type="text/css">
+    #mapId {
+      height: 600px;
+      width: 800px;
+    }
+
+  </style>
+  <!-- Adding styling info for page layout by reading in a CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Studio Week 2 <br> Marker and Popup with Mapbox GL JS map </h1>
+  <!-- Add multiple pages to web page-->
+  <!-- active class displays the grey box around current page-->
+  <ul>
+  	<li><a href="index.html" target="_self">Output 1</a></li>
+    <li><a href="Mapbox-gl-js-cwm.html" target="_self">Output 2</a></li>
+    <li><a class="active" href="Mapbox-gl-js-ct.html" target="_self">Output 3</a></li>
+    <li><a href="Mapbox-gl-js-bm.html" target="_self">Output 4</a></li>
+  </ul>
+  <br>
+
+  <!-- Create a div to house the map -->
+  <div id="mapId"></div>
+
+  <script>
+    // Set your Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1IjoicWlkaXpoYW5nIiwiYSI6ImNrOGdjNTRtbjAwMnczZXVkMm8wdWlxYmUifQ.8P_LRF-uggH6CNT_73GqNg';
+
+    var map = new mapboxgl.Map({
+        container: 'mapId', // container id
+        style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+        center: [-122.467, 37.798], // starting position [lng, lat]
+        zoom: 13 // starting zoom
+        });
+   </script>
+   <script>
+    /* Create a variable called "map" and use it to store a new mapbox gl map.
+    * Set your map's center to [-122.467, 37.798] and zoom to 13.
+    * Set the style URL to "mapbox://styles/mapbox/light-v10"
+    * See the Mapbox GL JS API reference for more info: https://docs.mapbox.com/mapbox-gl-js/api/
+    */
+
+    var popup = new mapboxgl.Popup({closeOnClick: false})
+      .setHTML("<b>The Presidio.</b><br /> Explore to find a drinking fountain!")
+
+    /* Create a variable called "popup" to store a new Popup instance (ref: https://docs.mapbox.com/mapbox-gl-js/api/#popup).
+     * and set its HTML content to:
+     * "<b>The Presidio.</b><br /> Explore to find a drinking fountain!"
+     */
+     </script>
+ <script>
+     var marker = new mapboxgl.Marker()
+  .setLngLat([-122.4700, 37.8011])
+  .setPopup(popup)
+  .addTo(map);
+
+
+    /* Create a variable called "marker,"
+     * add to it a new Marker (ref: https://docs.mapbox.com/mapbox-gl-js/api/#marker),
+     * set its Lng, Lat to [-122.4700, 37.8011],
+     * set its popup to the popup variable you created earlier,
+     * and add it to the map.
+     */
+
+  </script>
+</body>
+
+</html>
