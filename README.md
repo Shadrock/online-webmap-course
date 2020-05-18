@@ -8,9 +8,9 @@ Need some (mostly) off-the-shelf activities for online teaching about web maps? 
 Although all of these activities can be done in-browser, I strongly encourage students to use a code editor (I recommend [Atom](https://atom.io)) and [Github desktop](https://desktop.github.com) to work offline so they don't loose work due to connectivity issues. I recommend instructors survey their students before class to ensure their computing environment and connectivity won’t pose any problems (see [this blog post with sample survey](https://medium.com/@Shadrock/teaching-in-the-time-of-corona-part-i-7bb97ce6c715)).
 
 **To complete these activities students will need:**
-a Github account (we recommend [the student developer pack](https://education.github.com/pack)) for hosting web pages and sharing code,
-a [Mapbox account](https://www.mapbox.com), and
-a Google account for a Google maps embed in and for use with some [KnightLab applications[(https://knightlab.northwestern.edu/projects/)].
+- a Github account (we recommend [the student developer pack](https://education.github.com/pack)) for hosting web pages and sharing code,
+- a [Mapbox account](https://www.mapbox.com), and
+- a Google account for a Google maps embed in and for use with some [KnightLab applications](https://knightlab.northwestern.edu/projects/)].
 
  One activity also references embedding [ArcGIS Online](https://www.arcgis.com/index.html) maps from a previous lab of the full course, which is not included here.
 
@@ -45,6 +45,6 @@ This repo should be seen as a point of departure and not a bounded lab assignmen
 ![Screenshots of student work](images/IDCE_30262_studio_thumbnails.png)
 
 ## References / Citations / Credits
-These activities were created as part of my “Web Mapping and Open Source GIS” course at Clark University’s [Department of International Development, Community, and Environment](https://www.clarku.edu/schools/idce/). Everything was developed in collaboration with my course assistant [Priyanka Verma](https://github.com/verma-priyanka/) and we built off of the wonderful [training materials from our good friends at Mapbox](https://github.com/mapbox/web-mapping-curriculum). These activities also build-on or reference great work by: Jakob Zhao ([repo here](https://github.com/jakobzhao/geog371)); Maptime Boston ([repo here](https://github.com/maptimeBoston/leaflet-intro)), and Jonathan McGlone ([repo here](http://jmcglone.com/guides/github-pages/)). Please contact me if you find materials where the credit is missing or that you would rather have removed.
+These activities were created as part of my “Web Mapping and Open Source GIS” course at Clark University’s [Department of International Development, Community, and Environment](https://www.clarku.edu/schools/idce/). Everything was developed in collaboration with my course assistant [Priyanka Verma](https://github.com/verma-priyanka/) and we built off of the wonderful [training materials from our good friends at Mapbox](https://github.com/mapbox/web-mapping-curriculum). These activities also build-on or reference great work by: Jakob Zhao ([repo here](https://github.com/jakobzhao/geog371)); Maptime Boston ([repo here](https://github.com/maptimeBoston/leaflet-intro)), Jonathan McGlone ([repo here](http://jmcglone.com/guides/github-pages/)), and [Richard Hinton](https://geography.columbian.gwu.edu/richard-hinton). Please contact me if you find materials where the credit is missing or that you would rather have removed.
 
 The [license for this repo is CC-BY-SA-4.0](https://github.com/Shadrock/webmap-course/blob/master/LICENSE.md), so feel free to use or adapt all of this material in your class or training program! Please contribute via pull request or get in touch with me at shadrock.roberts@gmail.com. Future updates to this repo will include activities using Carto and understanding OpenStreetMap as both contributor and user.
