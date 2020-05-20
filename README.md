@@ -10,7 +10,7 @@ Although all of these activities can be done in-browser, I strongly encourage st
 **To complete these activities students will need:**
 - a Github account (we recommend [the student developer pack](https://education.github.com/pack)) for hosting web pages and sharing code,
 - a [Mapbox account](https://www.mapbox.com), and
-- a Google account for a Google maps embed in and for use with some [KnightLab applications](https://knightlab.northwestern.edu/projects/).
+- a Google account for a Google maps embed and for use with some [KnightLab applications](https://knightlab.northwestern.edu/projects/).
 
  One activity also references embedding [ArcGIS Online](https://www.arcgis.com/index.html) maps from a previous lab of the full course, which is not included here.
 
