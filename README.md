@@ -1,4 +1,4 @@
-# Take My Webmap Class Materials, Please!
+# Online Webmap Course Materials
 Need some (mostly) off-the-shelf activities for online teaching about web maps? This repository contains a series of open source activities that can be used to create 4-5 weeks worth of labs/lessons for web mapping and building basic web pages. By the end of these activities, students should:
 - have the good understanding of HTML, CSS, and JS (specifically [Leaflet](https://leafletjs.com/) and [Mapbox GL](https://docs.mapbox.com/help/glossary/mapbox-gl/)) and Github pages to build and host basic web sites;
 - demonstrate proficiency creating a range of web maps with various forms of interactivity; and
