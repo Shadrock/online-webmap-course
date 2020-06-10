@@ -12,7 +12,7 @@ Although all of these activities can be done in-browser, I strongly encourage st
 - a [Mapbox account](https://www.mapbox.com), and
 - a Google account for a Google maps embed and for use with some [KnightLab applications](https://knightlab.northwestern.edu/projects/).
 
- One activity also references embedding [ArcGIS Online](https://www.arcgis.com/index.html) maps from a previous lab of the full course, which is not included here.
+ One activity also references embedding [ArcGIS Online](https://www.arcgis.com/index.html) maps from a previous lab of the full course: these are not included here. If you don't have access to AGOL, simply have students embed maps from other sources.
 
 ## Contents & Delivery of Activities
 There are four folders in this repository labeled according to the week in which they are delivered (e.g. `studio-week1`). We released each folder as a stand-alone Github repository that students would clone or fork into their personal Github account from which to work. Each folder contains starter code that creates a simple web site in which students will construct their maps. The final week (`studio-week4`) requires students to create files from scratch using the previous 3 weeks as a starting point. This teaches students to navigate code and how to host a web site, as they learn to build maps.
