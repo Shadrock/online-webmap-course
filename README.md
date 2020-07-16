@@ -5,7 +5,7 @@ Need some (mostly) off-the-shelf activities for online teaching about web maps? 
 - feel confident navigating the building blocks of the Internet: hosting files, client/server relationships, and debugging.
 
 ## Required Software / Web Applications
-Although all of these activities can be done in-browser, I strongly encourage students to use a code editor (I recommend [Atom](https://atom.io)) and [Github desktop](https://desktop.github.com) to work offline so they don't loose work due to connectivity issues. I recommend instructors survey their students before class to ensure their computing environment and connectivity won’t pose any problems (see [this blog post with sample survey](https://medium.com/@Shadrock/teaching-in-the-time-of-corona-part-i-7bb97ce6c715)).
+Although all of these activities can be done in-browser, I strongly encourage students to use a code editor (I recommend [Atom](https://atom.io)) and [Github desktop](https://desktop.github.com) to work offline so they don't lose work due to connectivity issues. I recommend instructors survey their students before class to ensure their computing environment and connectivity won’t pose any problems (see [this blog post with sample survey](https://medium.com/@Shadrock/teaching-in-the-time-of-corona-part-i-7bb97ce6c715)).
 
 **To complete these activities students will need:**
 - a Github account (we recommend [the student developer pack](https://education.github.com/pack)) for hosting web pages and sharing code,
