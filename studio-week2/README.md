@@ -8,7 +8,7 @@ Last week we learned how to set up web pages and embed some pre-existing maps. T
 4. You need an active Mapbox account!
 
 ## Expected Outputs for this week / what to submit: 
-This repo contains starter code for a small, 4 page website that contains a series of different base maps, each on it's own page. You can preview the starter site by opening the `index.html` file in a web browser. The first three pages you will modifying using the following files and instructions. 
+This repo contains starter code for a small, 4 page website that contains a series of different base maps, each on it's own page. You can preview the starter site by opening the `index.html` file by using a local host or you can trying opening it in a web browser. The first three pages you will modifying using the following files and instructions. 
 - Start with `index.html`. The instructions for completing this map are under [exercise1](https://github.com/IDCE-MSGIS/studio-week2/blob/master/instructions/exercise1.md)
 - Next up is `Mapbox-gl-js-cwm.html`. The instructions for completing this map are under [exercise2](https://github.com/IDCE-MSGIS/studio-week2/blob/master/instructions/exercise2.md)
 - Then there is `Mapbox-gl-js-ct.html`. Follow instructions in the  `Mapbox-gl-js-ct.html` file to add a marker and popup to a Mapbox GL JS map. There is no tutorial for this exercise: follow the comments in the file!
