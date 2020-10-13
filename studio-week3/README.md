@@ -15,7 +15,8 @@ As with last week, you will submit a link to your Github repo and the working we
 **At the end of the week you will submit a link to your repo via Moodle.** Happy coding!
 
 ## For those who want to explore the basics more: 
-- If you want to explore Leaflet more, you can follows this [Leaflet tutorial for adding basic geographic features (point, polygon, polyline) to a map](https://github.com/jakobzhao/geog371/tree/master/lectures/lec07). You will need to set up a new `.html` file from scratch.  
+- If you want to explore Leaflet more, you can follows this [Leaflet tutorial for adding basic geographic features (point, polygon, polyline) to a map](https://github.com/jakobzhao/geog371/tree/master/lectures/lec07). You will need to set up a new `.html` file from scratch.
+- Continuing with Leaflet... here's a wide range of ["Code snippets" (small bits of code that can be used in a variety of situations) relating to leaflet / GeoJSON](https://gist.github.com/geog4046instructor). And in case you're wondering about this particular use of Github... the user has not created a separate repo for each code snippet, nor compiled the snippets as separate files in a repository, instead they are using a "[Gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/creating-gists)", which is basically a stand-alone page to store code. It's much lighter weight then creating a whole respository. Gists can hold any type of code and can, in fact, be another way to create a single web page (just create a gist with an `index.html` file). This is [a good blog post about all the wonderful thing you can do with Gists](https://www.labnol.org/internet/github-gist-tutorial/28499/)!
 - Alternatively, the [Leaflet website hosts a variety of tutorials](https://leafletjs.com/examples.html). Most of these tutorials assume that you can set up a basic html file, including body, header, and script tags. 
 
 ## For those who need a bigger challenge: 
