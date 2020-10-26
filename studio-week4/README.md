@@ -2,7 +2,7 @@
 
 Over the last three weeks, we’ve learned about setting up web pages, embedding maps, and building our own maps with increasing functionality. In all of the previous studios, we’ve had starter code for you to work with. This week you’ll be bringing all of your new technical skills together by creating your own HTML files and a series of maps they will contain. This week we will also be focusing more on data sources for your maps. Up to this point, we’ve been creating basic geometry by including it *within* the code of our page or by altering map tiles. This week, our code will be referencing data that we host from a variety of sources.
 
-**What you will need:** Google account (for hosing data in a sheet), Github for hosting website and data, Mapbox account.
+**What you will need:** Google account (for hosting data in a Gsheet), Github for hosting website and data, Mapbox account.
 
 ## Expected Outputs for this week / what to submit:
 
