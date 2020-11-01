@@ -20,7 +20,7 @@ It's more than a map, it's a huge crowdsourced database! What you see on on the 
 
 For example, some people focus on features in the database related to [cycling](https://www.thunderforest.com/maps/opencyclemap/), while others focus on [humanitarian features](http://map.hotosm.org/#15/32.2916/36.3341). You can see [a list of OSM tiles here](https://wiki.openstreetmap.org/wiki/Tiles) and view a few of the different tiles on the OSM homepage under the *Layers* icon on the right side of the screen.
 
-Show map data checkbox for a small area? 
+Show map data checkbox for a small area?
 
 ## Creating data
 Blah...
@@ -38,3 +38,5 @@ Sample search for [Zaatari refugee camp](https://en.wikipedia.org/wiki/Zaatari_r
 `amenity=water_point OR amenity= 	drinking_water`
 
 Preview raw geojson in browser. Download, maybe preview in Github or https://geojson.io.
+
+# Testing new Git setup
