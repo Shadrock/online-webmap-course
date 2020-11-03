@@ -64,9 +64,7 @@ Additionally, you can select the **Data** tab (next to the **Map** tab in the up
 
 5. Once everything looks good, export them by clicking the **Export** button in the toolbar, and select GeoJSON.
 
-Although we've previewed our data, you can also check your downloaded data by viewing it in https://geojson.io or using [Github to automatically render a GeoJSON file in a repo as a map](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/mapping-geojson-files-on-github).
-
-Congrats: you've got data! Happy mapping!
+Although we've previewed our data, you can also check your downloaded data by viewing it in https://geojson.io or using [Github to automatically render a GeoJSON file in a repo as a map](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/mapping-geojson-files-on-github). Congrats: you've got data! Happy mapping!
 
 # Citations & Further Info
 This tutorial pulled text from a variety of sources including the [Mapbox tutorial on incorporating OSM data](https://docs.mapbox.com/help/tutorials/overpass-turbo/), the [LearnOSM web page for OSM data](https://learnosm.org/en/osm-data/), and the [OSM Beginners Guide](https://wiki.openstreetmap.org/wiki/Beginners_Guide_1.3).
