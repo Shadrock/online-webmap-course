@@ -52,10 +52,10 @@ By reducing the coordinate values by 1 decimal place we really don't loose any m
 ```
 Notice that several properties have been deleted and that coordinates have been shortened to the sixth decimal place.
 
-The following steps were used to simply the data and create the `Zaatari_refugee_camp_water_simplified.geojson` file.
+The following steps were used to simplify the data and create the `Zaatari_refugee_camp_water_simplified.geojson` file.
 
 1. Upload data to a converter (I used http://geojson.io) and save the data as a .csv file.
-2. Open the .csv in the tabular editing program of your choice (I used Excel)
+2. Open the .csv in the tabular editing program of your choice (I used Excel).
 3. Remove `node/` from every record under the `@id` column using a find and replace.
 4. Since I only want to show the water points and, perhaps, symbolize them by `type` I removed the following columns: `amenity`,	`district`,	`source`, and	`street`.
 5. Simplify coordinates to the sixth decimal place. I did this by selecting all coordinates, formatting the cells as a number, and specifying the number of decimal places to be kept.
