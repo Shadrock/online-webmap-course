@@ -21,7 +21,7 @@ The example below shows how to view the Humanitarian OSM layer and see underlyin
 ## The Structure of OSM data
 OSM data are made of "elements" that are based on a "node" (analogous to points for GIS folks). Nodes can be separate or can be connected to create:
 - _Ways_: a connected line of nodes (analogous to polylines). Used to create roads, paths, rivers, and so on.
-- _Closed_: ways that form a closed loop (usually created to form areas).
+- _Closed Ways_: ways that form a closed loop (usually created to form areas).
 - _Areas_: closed ways which are also filled (analogous to polygons).
 - _Relations_ that can be used to create more complex shapes, or to represent elements that are related but not physically connected.
 
