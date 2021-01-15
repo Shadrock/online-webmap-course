@@ -33,6 +33,9 @@ It may be helpful to understand how these activities fit into the larger scheme 
 
 During the first month or so of class students are taught to create web maps, layers, web applications, and online surveys using ArcGIS online. Because many of them are working in an ESRI environment, this is important for their ability to match industry standards, but also helps them gain confidence in web mapping without programming. The “studio” activities in this repo are a pivot to a “[flipped class](https://facultyinnovate.utexas.edu/flipped-classroom)” model where I release materials to be reviewed before class, then we focus on working together during the class. I don’t lecture: we just work. The goal is maximum creativity and building things with open source tools. I try to create an environment based on the studio art classes I took as an undergraduate, where class time was devoted to exploring techniques, sharing your ongoing work with others, and spontaneous discussions about what’s working and what’s not.
 
+### Sample student work from the Fall 2020 Studio
+![Screenshots of student work](images/IDCE_30262_F20_studio_thumbnails.png)
+
 ### Sample student work from the Spring 2020 Studio
 ![Screenshots of student work](images/IDCE_30262_studio_thumbnails.png)
 
