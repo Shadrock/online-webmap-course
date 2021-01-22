@@ -18,8 +18,7 @@ See [this web map as an example](https://shadrock.github.io/alien-buffer/water.h
 Once you have completed this tutorial you will have a working web map. However, I would like you to think about ways the map could be changed to improve the goal of helping a user identify parts of a camp that do not have appropriate access to water and then make those changes to your map. You will submit a link to your Github repo and the working website that it hosts.
 
 ## Data from OSM
-The data for this exercise come from OSM. The `DATAREADME.md` file in the data folder introduces the structure of OSM data, how to search OSM for data, downloading data, and then simplifying it. This is a tutorial in its own right that will give you the basic skills to the vast range of data available in OSM.
-***ADD LINK.***
+The data for this exercise come from OSM and the data tutorial introduces the structure of OSM data, how to search OSM for data, downloading data, and then simplifying it. Create a folder called `data` in your repo and put your simplified data in it.
 
 # Getting Started - Initializing our Map
 Open a text editor and create a file called index.html. Set up the document by copying and pasting this template code below into your new HTML file.
@@ -97,7 +96,7 @@ Open a text editor and create a file called index.html. Set up the document by c
 
 </html>
 ```
-The variable `url` stores a link to the OSM data you created following the instructions in the data tuturial **(LINK)**. These data should be a feature collection with information about the location of each water point. The data also contains a field `type` which has one of three unique values: `Free_standing`, `Attached_to_WASH_centre`, or `Oxfam_water_storage`. We'll be using this to select only free standing water sources on our map. When setting the the variable, be sure to point to the page containing *raw* data and *not* simply to the Github page that displays the data!  
+The variable `url` stores a link to the OSM data you created following the instructions in the data tutorial. These data should be a feature collection with information about the location of each water point. The data also contains a field `type` which has one of three unique values: `Free_standing`, `Attached_to_WASH_centre`, or `Oxfam_water_storage`. We'll be using this to select only free standing water sources on our map. When setting the the variable, be sure to point to the page containing *raw* data and *not* simply to the Github page that displays the data!  
 
 The css `#instructions` defines the properties for the instruction pane on the map: feel free to play with the design.
 
