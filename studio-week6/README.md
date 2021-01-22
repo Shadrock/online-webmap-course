@@ -1,4 +1,4 @@
-# Mali Health Maps
+# Mali Health Maps with OSM & Leaflet
 For this studio, imagine that you work in a development organization that is trying to tackle the issue of malnutrition in Mali. Program managers want to identify existing health sites in parts of the country where they work that can be used to distribute information about malnutrition, host workshops or clinics on addressing malnutrition, or as sites for data collection. The challenge is that most program officers aren’t sure of what health sites exist and will need to work with local staff to confirm and identify appropriate health sites. As a starting point, the program officers have asked you to provide an interactive map that delivers some information about malnutrition in Mali along with information about existing health sites so that they can investigate the places where they have programs to get a feel for what health resources are where, for further investigation. The map might also be used to think about where to create new health sites or confirm existing ones.
 
 ## What You Will Learn
