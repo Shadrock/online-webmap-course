@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mali Health Sites Map</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" /> <!-- for geocoder -->
+
+	<style>
+		body {
+			margin: 0px;
+		}
+
+		h1 {
+			float: left;
+			padding-left: 10px;
+			font-family: Helvetica, Arial, Verdana;
+      font-size: 42px
+    }
+
+    p {
+      font-family: Helvetica, Arial, Verdana;
+      font-size: 18px;
+			padding-left: 10px;
+    }
+
+		#wrapper {
+			width: 800px;
+		}
+
+		#map {
+			width: 780px;
+			margin: 0 auto;
+			height: 500px;
+		}
+
+		.legend {
+		  line-height: 18px;
+		  color: #333333;
+		  font-family: Helvetica, sans-serif;
+		  padding: 6px 8px;
+		  background: white;
+		  background: rgba(255, 255, 255, 0.9);
+		  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		  border-radius: 5px;
+		  }
+
+		.legend i {
+		  width: 28px;
+		  height: 18px;
+		  float: left;
+		  margin-right: 8px;
+		  opacity: 0.7;
+		  }
+
+		.legend img {
+		  width: 18px;
+		  height: 18px;
+		  float: left;
+		  }
+
+		.legend p {
+		  font-size: 12px;
+		  line-height: 18px;
+		  margin: 0;
+
+		#controls {
+			width: 100%;
+			margin: 0 auto;
+			padding: 15px;
+		}
+
+		#narrative {
+			margin: 0 auto;
+			padding: 15px;
+		}
+
+		#header {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Web map & content will go here.  -->
+	<div id="wrapper">
+		<div id="header">
+			<h1>Malnutrition & Health Sites in Mali</h1>
+		</div>
+		<div id="map"></div>
+		<div id="controls">
+			<!-- Here is the code for a button if we were going to add them.
+			<button class="button" id="toggleButton">BUTTON!</button>
+			-->
+			<div id="narrative"><p>You can put narrative text or explanation here.</p></div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>  <!-- for geocoder -->
+	<script>
+    // Create Map Object
+    var map = L.map('map',{ center: [17.130,-6.053], zoom: 5 });
+
+    // Add Tile Layer
+		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+			attribution: 'Tiles by <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Data from <a href="https://data.humdata.org/search?ext_geodata=1&q=mali%20health&ext_page_size=25&sort=score%20desc%2C%20if(gt(last_modified%2Creview_date)%2Clast_modified%2Creview_date)%20desc">HDX</a>',
+			maxZoom: 17,
+			minZoom: 5
+		}).addTo(map);
+
+		//Adding the search geocoder
+  	L.Control.geocoder({
+			position: "topleft",
+			placeholder: "Enter place name",
+			errorMessage: "No place found.",
+		})
+		.addTo(map);
+
+
+		// Add GeoJSON Data
+		$.getJSON("data/Mali_healthsites.geojson",function(data){
+		    // set Healthsites to the dataset and add the Healthsites GeoJSON layer to the map
+		    Healthsites = L.geoJson(data,{
+					onEachFeature: function (feature, layer) {
+						layer.bindPopup('Type: '+feature.properties.amenity+'<br>Name: '+feature.properties.name+'');
+					}, pointToLayer: function (feature, latlng) {
+            if (feature.properties.amenity == "clinic"){ // Replacing previous marker with conditionals
+              var marker = L.marker(latlng,{icon: clinicIcon});
+            } else if (feature.properties.amenity == "dentist") {
+              var marker = L.marker(latlng,{icon: dentistIcon});
+						} else if (feature.properties.amenity == "doctors") {
+							var marker = L.marker(latlng,{icon: doctorsIcon});
+						} else if (feature.properties.amenity == "hospital") {
+							var marker = L.marker(latlng,{icon: hospitalIcon});
+						} else {
+							var marker = L.marker(latlng,{icon: pharmacyIcon});
+            };
+        	return marker;
+        	}
+				}).addTo(map);
+		});
+
+		// Create Custom Icons Here
+		// Start by creating a standard Health Icon
+		var healthIcon = L.Icon.extend({ // adding the .extend and capital I!
+			options:{
+				iconUrl: 'icons/health_facility.png',
+				iconSize: [24,24],
+				iconAnchor: [12,12],
+				popupAnchor: [0,-6]
+			}
+		});
+
+		// Create specific icons for amenity types
+		var clinicIcon = new healthIcon({iconUrl: 'icons/clinic.png'});
+		var dentistIcon = new healthIcon({iconUrl: 'icons/dentist.png'});
+		var doctorsIcon = new healthIcon({iconUrl: 'icons/doctor.png'});
+		var hospitalIcon = new healthIcon({iconUrl: 'icons/health_facility.png'});
+		var pharmacyIcon = new healthIcon({iconUrl: 'icons/medicine.png'});
+
+		// Add Admin unit Polygons
+		// Null variable that will hold admin units layer
+		var adminLayer = null;
+
+		// Add Admin Polygons
+		$.getJSON("data/Mali_Prevalence_Global_Acute_Malnutrition.geojson",function(data){
+		    adminLayer = L.geoJson(data, {style: style}).addTo(map);
+		});
+		// Set function for color ramp w/ colors from Colobrewer
+		function setColor(Wast_Text){
+		return Wast_Text == 'High' ? '#e6550d' :
+			Wast_Text == 'Medium' ? '#fdae6b' :
+			Wast_Text == 'Low' ? '#fee6ce' :
+	                     '#d4cfcd';
+		};
+
+		// Set style function that sets fill color property equal to FI_Class
+		function style(feature) {
+    	return {
+      	fillColor: setColor(feature.properties.Wast_Text),
+      	fillOpacity: 0.7,
+      	weight: 0,
+      	opacity: 0,
+      	color: '#ffffff',
+      	dashArray: '0'
+    	};
+		}
+
+		// Create Leaflet Control Object for Legend
+		var legend = L.control({
+			position: 'topright'
+		});
+
+		// Function that runs when legend is added to map
+		legend.onAdd = function(map) {
+
+			// Create Div Element and Populate it with HTML
+			var div = L.DomUtil.create('div', 'legend');
+			div.innerHTML += '<b>Prevalence of wasting </b><br/>';
+			div.innerHTML += '<b>in children < 5 yrs. old,</b><br/>';
+			div.innerHTML += '<b>by region</b><br/>';
+			div.innerHTML += '<i style="background: #e6550d"></i><p>High</p>';
+			div.innerHTML += '<i style="background: #fdae6b"></i><p>Medium</p>';
+			div.innerHTML += '<i style="background: #fee6ce"></i><p>Low</p>';
+			div.innerHTML += '<i style="background: #d4cfcd"></i><p>Uncategorized</p>';
+			div.innerHTML += '<hr><img src="icons/clinic.png"><p>Clinic</p>';
+			div.innerHTML += '<img src="icons/dentist.png"><p>Dentist</p>';
+			div.innerHTML += '<img src="icons/doctor.png"><p>Doctor</p>';
+			div.innerHTML += '<img src="icons/health_facility.png"><p>Hospital</p>';
+			div.innerHTML += '<img src="icons/medicine.png"><p>Pharmacy</p>';
+			// Return the Legend div containing the HTML content
+			return div;
+		};
+
+		// Add Legend to Map
+		legend.addTo(map);
+
+		// Add Scale Bar to Map
+		L.control.scale({
+			position: 'bottomleft'
+		}).addTo(map);
+
+	</script>
+</body>
+</html>

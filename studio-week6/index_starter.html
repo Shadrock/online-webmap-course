@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mali Health Sites Map</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<style>
+		body {
+			margin: 0px;
+		}
+
+		h1 {
+			float: left;
+			padding-left: 10px;
+			font-family: Helvetica, Arial, Verdana;
+      font-size: 42px
+    }
+
+    p {
+      font-family: Helvetica, Arial, Verdana;
+      font-size: 18px;
+			padding-left: 10px;
+    }
+
+		#wrapper {
+			width: 800px;
+		}
+
+		#map {
+			width: 780px;
+			margin: 0 auto;
+			height: 500px;
+		}
+
+		#controls {
+			width: 100%;
+			margin: 0 auto;
+			padding: 15px;
+		}
+
+		#narrative {
+			width: 780px;
+			height: 500px;
+			margin: 0 auto;
+			padding: 15px;
+		}
+
+		#header {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Web map & content will go here.  -->
+	<div id="wrapper">
+		<div id="header">
+			<h1>Malnutrition & Health Sites in Mali</h1>
+		</div>
+		<div id="map"></div>
+		<div id="controls">
+			<!-- Here is the code for a button if we were going to add them.
+			<button class="button" id="toggleButton">BUTTON!</button>
+			-->
+			<div id="narrative"><p>You can put narrative text or explanation here.</p></div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+    	// Create Map Object
+    	var map = L.map('map',{ center: [39.7644,-104.8548], zoom: 9 });
+
+    	// Add Tile Layer
+		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+			attribution: 'Tiles by <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Data by <a href="url here">Who???</a>',
+			maxZoom: 17,
+			minZoom: 9
+		}).addTo(map);
+
+		// Add GeoJSON Data
+
+		// Create Custom Icons Here
+
+		// Add Admin unit Polygons
+
+		// Create Leaflet Control Object for Legend
+
+		// Add Scale Bar to Map
+
+
+	</script>
+</body>
+</html>
