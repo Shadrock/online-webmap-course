@@ -96,7 +96,7 @@ Open a text editor and create a file called index.html. Set up the document by c
 
 </html>
 ```
-The variable `url` stores a link to the OSM data you created following the instructions in the data tutorial. These data should be a feature collection with information about the location of each water point. The data also contains a field `type` which has one of three unique values: `Free_standing`, `Attached_to_WASH_centre`, or `Oxfam_water_storage`. We'll be using this to select only free standing water sources on our map. When setting the the variable, be sure to point to the page containing *raw* data and *not* simply to the Github page that displays the data!  
+The variable `url` stores a link to the OSM data you created following the instructions in the data tutorial. These data should be a feature collection with information about the location of each water point. The data also contains a field `type` which has one of three unique values: `Free_standing`, `Attached_to_WASH_centre`, or `Oxfam_water_storage`. We'll be using this to select only free standing water sources on our map. When setting the variable, be sure to point to the page containing *raw* data and *not* simply to the Github page that displays the data!  
 
 The css `#instructions` defines the properties for the instruction pane on the map: feel free to play with the design.
 
