@@ -230,17 +230,17 @@ Save your code and open the HTML document in a browser. When you click on the ma
 In this step we are going to create a function that loops through all the features in our original GeoJSON data. Next, the function we will use `turf.booleanPointInPolygon` to filter features that are both inside the buffered region and are free standing water stations (`Free_standing` is a `type` property in the GeoJSON data). This code will go under the comment ```//spatialJoin function goes here!```
 
 ```javascript
-function spatialJoin(sourceGeoJSON, filterFeature) {
-    // Need this line to specify the array since map.getSource in the click event doesn't do this.
-    sourceGeoJSON = map.querySourceFeatures(sourceLayer);
-    // Loop through all the features in the source geojson and return the ones that
-    // are inside the filter feature (buffered radius) and are confirmed free standing sites
-    var joined = sourceGeoJSON.features.filter(function (feature) {
-      return turf.booleanPointInPolygon(feature, filterFeature) && feature.properties.type === 'Free_standing';
-    });
+function spatialJoin(sourceLayer, filterFeature) {
+  // Need this line to specify the array since map.getSource in the click event doesn't do this.
+  sourceGeoJSON = map.querySourceFeatures(sourceLayer);
+  // Loop through all the features in the source geojson and return the ones that
+  // are inside the filter feature (buffered radius) and are confirmed landing sites
+  var joined = sourceGeoJSON.filter(function (feature) {
+    return turf.booleanPointInPolygon(feature, filterFeature) && feature.properties.type === 'Free_standing';
+  });
 
-    return joined;
-  }
+  return joined;
+};
 ```
 There are a few things happening in the code here. the filter code above requires an array, such as `[30, 10]`. And, unfortunately, the `map.getSource` we used in the click event doesn't give our code access to the raw data so we use `sourceGeoJSON = map.querySourceFeatures(sourceLayer);` here to make sure the array is loaded. For more information about querying external data source features see [this Mapbox issue on Github](https://github.com/mapbox/mapbox-gl-js/issues/8333).
 
